@@ -1,4 +1,4 @@
-# rbe500_pa1
+# rbe500_team2_pa1
 Repo for Team 2 - Project #1 (RBE 500)
 
 **Assignment Description**
@@ -15,3 +15,7 @@ You can utilize ROS Session 5 and the Gazebo tutorials about how to create the r
 * Pblishes the pose as a ROS topic (inside the callback function that reads the joint values)
 
 This is a publisher-subscriber implementation. Print the resulting pose to the terminal by using “rostopic echo” command, and include the screenshot in your report.
+
+**Package Overview**
+
+**Insructions**
