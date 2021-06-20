@@ -5,7 +5,7 @@ Repo for Team 2 - Project #1 (RBE 500)
 
 1. Create the robot:Create the following SCARA robot in ROS and Gazebo.
 
-[comment]: <> (!alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true))
+![alt text](https://raw.githubusercontent.com/poolec4/rbe500_team2_pa1/main/pt1-SCARA.png)
 
 You can utilize ROS Session 5 and the Gazebo tutorials about how to create the robot and how to integrate it with ROS. Please note that only the configuration of the robot is important; it does not need to visually look like it is in the figure. You can represent the links with cylinders, for example.Please note that you can read the joint value of the robot via topics published by Gazebo to the ROS environment. Spawn your robot in your ROS-Gazebo environment and take an image of your robot. Include the image in your report together with your robot definition file.
 
