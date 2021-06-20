@@ -16,6 +16,14 @@ You can utilize ROS Session 5 and the Gazebo tutorials about how to create the r
 
 This is a publisher-subscriber implementation. Print the resulting pose to the terminal by using “rostopic echo” command, and include the screenshot in your report.
 
+3.  Inverse Kinematics: Implement an inverse kinematics node (a separate node) that has a service client that takes a (desired) pose of the end effector and returns joint positions as a response.
+
+This is a service server-service client implementation.
+
+Test your node with the “rosservice call” command. Take the screen shot together and include it to your report. 
+
+Be sure to submit your code.
+
 **Package Overview**
 
 **Insructions**
