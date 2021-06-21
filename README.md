@@ -26,4 +26,9 @@ Be sure to submit your code.
 
 **Package Overview**
 
+1. configuration_to_operational_sub.py corresponds to part 2. It will subscribe to the joint values topic from Gazebo and calucalte the end effector pose. TODO:
+* Change subscriber to point to correct message from Gazebo
+* Add in transformation equations from DH params
+* Add publisher inside callback function
+
 **Insructions**
