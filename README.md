@@ -25,7 +25,7 @@ Test your node with the “rosservice call” command. Take the screen shot toge
 Be sure to submit your code.
 
 **Robot Frame Definition**
-![alt text](https://raw.githubusercontent.com/poolec4/rbe500_team2_pa1/rrp_manipulator_reference_frames.png)
+![alt text](https://raw.githubusercontent.com/poolec4/rbe500_team2_pa1/main/rrp_manipulator_reference_frames.png)
 
 **Package Overview**
 
