@@ -1,0 +1,113 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.725in]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\allowdisplaybreaks
+
+\usepackage[T1]{fontenc}
+\usepackage[numbered,framed]{matlab-prettifier}
+
+\hypersetup{ colorlinks=true, linkcolor=blue}
+
+\DeclareMathOperator{\atantwo}{atan2}
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "l" column type
+
+\pagestyle{fancy}
+\lhead{RBE 500 - PA \#1 \newline Team 2: Peter Campellone, Aislin Hanscom, Christopher Poole}
+\rhead{Due: 6/29/2021}
+
+\begin{document}
+
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{4pt}
+
+\begin{itemize}
+	\item We begin by assigning coordinate frames to the manipulator:
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{figures/rrp_manipulator_reference_frames.png}
+	\end{figure}
+	
+	\item We can then formulate the DH parameters coordinating to the links:
+	
+	\begin{center}
+	\begin{tabular}{ c | C | C | C | C }
+		Link & \theta_i & d_i & a_i & \alpha_i \\
+		\hline 
+		1 & \theta_1^* & d_1 & l_1 & 0 \\
+		2 & \theta_2^* & 0 & l_2 & 0 \\
+		3 & 0 & -d_3^* & 0 & 0 \\
+	\end{tabular}
+	\end{center}
+	
+	\item Next, we can calculate the transformations for each frame:
+
+	\begin{align*}
+		T_{i+1}^i &= \text{Rot}_z(\theta_i) \text{Trans}_z(d_i) \text{Trans}_x(a_i) \text{Rot}_x(\alpha_i) = \begin{bmatrix}
+		\cos\theta_i & -\sin\theta_i \cos\alpha_i &\sin\theta_i \sin\alpha_i & a_i \cos\theta_i \\
+		\sin\theta_i & \cos\theta_i \cos\alpha_i & -\cos\theta_i \sin\alpha_i & a_i \sin\theta_i \\
+		0 & \sin\alpha_i & \cos\alpha_i & d_i \\
+		0 & 0 & 0 & 1
+		\end{bmatrix}
+		\\
+		T_{2}^1 &= \begin{bmatrix}
+		1 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix}
+		\\
+		T_{2}^1 &= \begin{bmatrix}
+		\cos\theta_1 & -\sin\theta_1 \cos 0 &\sin\theta_1 \sin 0 & l_1 \cos\theta_1 \\
+		\sin\theta_1 & \cos\theta_1 \cos 0 & -\cos\theta_1 \sin 0 & l_1 \sin\theta_1 \\
+		0 & \sin 0 & \cos 0 & d_1 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix} = \begin{bmatrix}
+		\cos\theta_1 & -\sin\theta_1 & 0 & l_1 \cos\theta_1 \\
+		\sin\theta_1 & \cos\theta_1 & 0 & l_1 \sin\theta_1 \\
+		0 & 0 & 1 & d_1 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix}
+		\\
+		T_{3}^2 &= \begin{bmatrix}
+		\cos\theta_2 & -\sin\theta_2 \cos 0 &\sin\theta_2 \sin 0 & l_2 \cos\theta_2 \\
+		\sin\theta_2 & \cos\theta_2 \cos 0  & -\cos\theta_2 \sin 0 & l_2 \sin\theta_2 \\
+		0 & \sin 0 & \cos 0 & 0 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix} = \begin{bmatrix}
+		\cos\theta_2 & -\sin\theta_2 & 0 & l_2 \cos\theta_2 \\
+		\sin\theta_2 & \cos\theta_2 & 0 & l_2 \sin\theta_2 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix}
+		\\
+		T_{4}^3 &= \begin{bmatrix}
+		\cos 0 & -\sin 0 \cos 0 &\sin 0 \sin 0 & 0 \cos 0 \\
+		\sin 0 & \cos 0 \cos 0 & -\cos 0 \sin 0 & 0 \sin 0 \\
+		0 & \sin 0 & \cos 0 & -d_3 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix} = \begin{bmatrix}
+		1 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 \\
+		0 & 0 & 1 & -d_3 \\
+		0 & 0 & 0 & 1
+		\end{bmatrix}
+	\end{align*}
+\end{itemize}
+\end{document}
+
+
+

@@ -28,7 +28,7 @@ ___
 
 
 **Robot Frame Definition**
-![alt text](https://raw.githubusercontent.com/poolec4/rbe500_team2_pa1/main/rrp_manipulator_reference_frames.png)
+![alt text](https://raw.githubusercontent.com/poolec4/rbe500_team2_pa1/main/Submission/figures/rrp_manipulator_reference_frames.png)
 
 **Package Overview**
 
