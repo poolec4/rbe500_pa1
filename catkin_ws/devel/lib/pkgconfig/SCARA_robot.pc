@@ -1,0 +1,8 @@
+prefix=/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel
+
+Name: SCARA_robot
+Description: Description of SCARA_robot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

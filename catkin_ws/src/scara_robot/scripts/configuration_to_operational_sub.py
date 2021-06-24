@@ -12,6 +12,10 @@ import numpy as np # numpy library for arrays and matrices
 
 #TODO import necessary messages 
 
+d1 = 1 # <---- UPDATE
+l1 = 1 # <---- UPDATE
+l1 = 1 # <---- UPDATE
+
 def rot_to_euler(R): # converts a 3x3 rotation matrix to ZYZ Euler angles
 	phi = math.atan2(R[1,2],R[0,2])
 	psi = math.atan2(R[2,1],-R[2,0])
@@ -23,12 +27,17 @@ def rot_to_euler(R): # converts a 3x3 rotation matrix to ZYZ Euler angles
 
 def calc_homogeneous_transform(q): # calculate the homogeneous transform from the base frame to EE
 	
-	##
-	#TODO add frame transformations here
-	##
+	# q = [th1, th2, d3]
+	th1 = q[0]
+	th2 = q[1]
+	d3 = q[2]
 
+	T1_0 = np.matrix([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]) # frame 1 w.r.t 0
+	T2_1 = np.matrix([[math.cos(th1),-math.sin(th1),0,l1*math.cos(th1)],[math.sin(th1),math.cos(th1),0,l1*math.sin(th1)],[0,0,1,d1],[0,0,0,1]])	# frame 2 w.r.t 1 
+	T3_2 = np.matrix([[math.cos(th2),-math.sin(th2),0,l2*math.cos(th2)],[math.sin(th2),math.cos(th2),0,l2*math.sin(th2)],[0,0,1,0],[0,0,0,1]])	# frame 3 w.r.t 2 
+	T4_3 = np.matrix([[1,0,0,0],[0,1,0,0],[0,0,1,-d3],[0,0,0,1]]) # frame 4 w.r.t 3
 
-	T7_0 = #TODO add transform multiplication here # post multiplication of transforms
+	T_EE = T1_0.dot(T2_1).dot(T3_2).dot(T4_3)
 
 	return T_EE 
 
@@ -51,7 +60,7 @@ def callback(data):
 
 def listener(): # function that loops continuously waiting for incoming messages
     rospy.init_node('configuration_to_operational_sub') # initialize node
-    rospy.Subscriber('configuration_to_operational_sub', joint_configuration, callback) # initialize subscriber under configuration_to_operational_sub topic name, joint_configuration as the message, and the callback function
+    #rospy.Subscriber('configuration_to_operational_sub', ##TBD##, callback) # initialize subscriber under configuration_to_operational_sub topic name, joint_configuration as the message, and the callback function
 
     rospy.spin() # keep node running
 
