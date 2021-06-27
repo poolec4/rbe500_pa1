@@ -33,15 +33,47 @@
 \setlength{\abovedisplayshortskip}{4pt}
 \setlength{\belowdisplayshortskip}{4pt}
 
-\begin{itemize}
-	\item We begin by assigning coordinate frames to the manipulator:
-
+\begin{enumerate}
+	\item \textbf{Create the robot:}
+	
+	\begin{itemize}
+		\item Spawn the robot to the ROS-Gazebo environment. Include and image of the robot.
+		
+		\item Include the robot definition file.
+		\\
+		
+		Include \href{http://wiki.ros.org/joint_state_publisher}{\texttt{joint\_state\_publisher}}
+		
+		Reference this \href{https://answers.ros.org/question/348008/connecting-gazebo-and-rviz/}{connecting-gazebo-and-rviz}
+		
+		\item \texttt{roslaunch rrbot\_gazebo rrbot\_world.launch}
+		\item Set PID gains in \texttt{rrbot\_control.yaml} to zero
+		\item \texttt{roslaunch rrbot\_control rrbot\_control.launch}
+		\item \texttt{rostopic list}
+		\item \texttt{rostopic echo /rrbot.joint\_states}
+		\item \texttt{rosrun scara\_robot configuration\_to\_operational\_sub.py}
+	\end{itemize}
+	
+	
+	\item \textbf{Forward Kinematics:}
+	Implement a FK node that
+	
+	\begin{itemize}	
+		\item Subscribes to the joint values topic and reads them from the Gazebo simulator.
+		\item Calculates the pose of the end-effector.
+		\item Publishes the pose as a ROS topic (inside the callback function that reads the joint values).
+	\end{itemize}
+	Print the resulting pose to the terminal using the \texttt{rostopic echo} command and include a screenshot of the results.
+	\\
+	
+	We begin by assigning coordinate frames to the manipulator:
+	
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.6\textwidth]{figures/rrp_manipulator_reference_frames.png}
 	\end{figure}
 	
-	\item We can then formulate the DH parameters coordinating to the links:
+	We can then formulate the DH parameters coordinating to the links:
 	
 	\begin{center}
 	\begin{tabular}{ c | C | C | C | C }
@@ -53,8 +85,8 @@
 	\end{tabular}
 	\end{center}
 	
-	\item Next, we can calculate the transformations for each frame:
-
+	Next, we can calculate the transformations for each frame:
+	
 	\begin{align*}
 		T_{i+1}^i &= \text{Rot}_z(\theta_i) \text{Trans}_z(d_i) \text{Trans}_x(a_i) \text{Rot}_x(\alpha_i) = \begin{bmatrix}
 		\cos\theta_i & -\sin\theta_i \cos\alpha_i &\sin\theta_i \sin\alpha_i & a_i \cos\theta_i \\
@@ -106,7 +138,28 @@
 		0 & 0 & 0 & 1
 		\end{bmatrix}
 	\end{align*}
-\end{itemize}
+	
+	The combined transformation of the end effector is:
+	\begin{align*}
+		T_4^0 = T_1^0 T_2^1 T_3^2 T_4^3
+	\end{align*}
+	
+	This will be used in the forward kinematic subscriber's callback function.
+	
+	\item \textbf{Inverse Kinematics:}
+	
+	\begin{itemize}
+		\item Implement an IK node (separate node) that has a service client that take a desired pose of the end effector and returns joint positions as a response.
+	
+		\item Test your node with \texttt{rosservice call}. Include a screenshot of the results.
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.5\textwidth]{figures/rrp_IK.png}
+		\end{figure}
+	
+	\end{itemize}
+\end{enumerate}
 \end{document}
 
 

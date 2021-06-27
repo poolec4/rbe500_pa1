@@ -314,6 +314,9 @@ gennodejs_DIR:PATH=/opt/ros/melodic/share/gennodejs/cmake
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/melodic/share/genpy/cmake
 
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
+
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/gtest/googlemock
 
@@ -389,6 +392,9 @@ scara_robot_BINARY_DIR:STATIC=/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws
 
 //Value Computed by CMake
 scara_robot_SOURCE_DIR:STATIC=/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot
+
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
