@@ -131,7 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/cmake_install.cmake")
+  include("/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/cmake_install.cmake")
+  include("/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics/cmake_install.cmake")
 
 endif()
 

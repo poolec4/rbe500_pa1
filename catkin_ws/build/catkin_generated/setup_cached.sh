@@ -7,3 +7,4 @@
 # new environment variables
 
 # modified environment variables
+export PWD='/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build'
