@@ -13,7 +13,7 @@ import numpy as np # numpy library for arrays and matrices
 from tf.transformations import euler_from_quaternion
 
 from sensor_msgs.msg import JointState
-from scara_robot.msg import robot_pose # list of message variables
+from scara_robot.msg import scara_robot_pose # list of message variables
 
 d1 = 1 # <---- UPDATE
 l1 = 1 # <---- UPDATE
@@ -21,15 +21,16 @@ l2 = 1 # <---- UPDATE
 
 def rot_to_euler(R): # converts a 3x3 rotation matrix to ZYZ Euler angles
 	phi = math.atan2(R[1,2],R[0,2])
-	psi = math.atan2(R[2,1],-R[2,0])
-	theta = math.atan2((R[2,1]/math.sin(psi)),R[2,2])
+	sphi = math.sin(phi)
+	cphi = math.cos(phi)
+	theta = math.atan2(cphi*R[0,2] + sphi*R[1,2], R[2,2])
+	psi = math.atan2(-sphi*R[0,0] + cphi*R[1,0], -sphi*R[0,1] + cphi*R[1,1])
 
 	eangles = np.array([phi, theta, psi])
 	
 	return eangles
 
 def calc_homogeneous_transform(q): # calculate the homogeneous transform from the base frame to EE
-	
 	# q = [th1, th2, d3]
 	th1 = q[0]
 	th2 = q[1]
@@ -49,9 +50,8 @@ def callback(data):
 	th1 = data.position[0] # extract message data
 	th2 = data.position[1]
 	d3 = data.position[2]
-	d3 = 0 
 
-	print("Received joint parameters: [%f, %f, %f] (th1,th2,d3) (radians, meters)" % (th1,th2,d3)) # printing received data to terminal
+	print("\n\nReceived joint parameters: [%f, %f, %f] (th1,th2,d3) (radians, meters)" % (th1,th2,d3)) # printing received data to terminal
 
 	q = np.array([th1,th2,d3]) # combine joint configurations into array (radians, meters) 
 
@@ -61,7 +61,7 @@ def callback(data):
 
 	eangles_EE = rot_to_euler(R_EE) # convert orientation to euler angles
 
-	msg = robot_pose();
+	msg = scara_robot_pose();
 
 	msg.x = d_EE[0]
 	msg.y = d_EE[1]
@@ -71,13 +71,13 @@ def callback(data):
 	msg.psi = eangles_EE[2]
 
 	pose_publisher.publish(msg)
-	print("Converted end-effector pose: p = [%f, %f, %f, %f, %f, %f] (x,y,z,phi,theta,psi) (ZYZ) (meters, radians)" % (d_EE[0],d_EE[1],d_EE[2],eangles_EE[0],eangles_EE[1],eangles_EE[2])) # printing converted values to terminal
+	print("\nConverted end-effector pose: p = [%f, %f, %f, %f, %f, %f] (x,y,z,phi,theta,psi) (ZYZ) (meters, radians)" % (d_EE[0],d_EE[1],d_EE[2],eangles_EE[0],eangles_EE[1],eangles_EE[2])) # printing converted values to terminal
 
 def listener(): # function that loops continuously waiting for incoming messages
     rospy.init_node('configuration_to_operational_sub') # initialize node
     rospy.Subscriber('/rrbot/joint_states', JointState, callback) # initialize subscriber under /rrbot/joint_states topic name, JointState as the message, and the callback function
 
-	pose_publisher = rospy.Publisher("pose_publisher", robot_pose, queue_size = 1)
+    pose_publisher = rospy.Publisher("pose_publisher", scara_robot_pose, queue_size = 1)
 
     rospy.spin() # keep node running
 

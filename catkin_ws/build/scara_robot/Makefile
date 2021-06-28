@@ -92,6 +92,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -102,16 +113,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -124,16 +125,15 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : test/fast
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,156 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_genpy.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_genpy.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_genpy.dir/rule
+
+# Convenience name for target.
+scara_robot_genpy: scara_robot/CMakeFiles/scara_robot_genpy.dir/rule
+
+.PHONY : scara_robot_genpy
+
+# fast build rule for target.
+scara_robot_genpy/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_genpy.dir/build.make scara_robot/CMakeFiles/scara_robot_genpy.dir/build
+.PHONY : scara_robot_genpy/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_generate_messages_nodejs.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_generate_messages_nodejs.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+scara_robot_generate_messages_nodejs: scara_robot/CMakeFiles/scara_robot_generate_messages_nodejs.dir/rule
+
+.PHONY : scara_robot_generate_messages_nodejs
+
+# fast build rule for target.
+scara_robot_generate_messages_nodejs/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_generate_messages_nodejs.dir/build.make scara_robot/CMakeFiles/scara_robot_generate_messages_nodejs.dir/build
+.PHONY : scara_robot_generate_messages_nodejs/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_genlisp.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_genlisp.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_genlisp.dir/rule
+
+# Convenience name for target.
+scara_robot_genlisp: scara_robot/CMakeFiles/scara_robot_genlisp.dir/rule
+
+.PHONY : scara_robot_genlisp
+
+# fast build rule for target.
+scara_robot_genlisp/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_genlisp.dir/build.make scara_robot/CMakeFiles/scara_robot_genlisp.dir/build
+.PHONY : scara_robot_genlisp/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_geneus.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_geneus.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_geneus.dir/rule
+
+# Convenience name for target.
+scara_robot_geneus: scara_robot/CMakeFiles/scara_robot_geneus.dir/rule
+
+.PHONY : scara_robot_geneus
+
+# fast build rule for target.
+scara_robot_geneus/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_geneus.dir/build.make scara_robot/CMakeFiles/scara_robot_geneus.dir/build
+.PHONY : scara_robot_geneus/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_generate_messages_eus.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_generate_messages_eus.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+scara_robot_generate_messages_eus: scara_robot/CMakeFiles/scara_robot_generate_messages_eus.dir/rule
+
+.PHONY : scara_robot_generate_messages_eus
+
+# fast build rule for target.
+scara_robot_generate_messages_eus/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_generate_messages_eus.dir/build.make scara_robot/CMakeFiles/scara_robot_generate_messages_eus.dir/build
+.PHONY : scara_robot_generate_messages_eus/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_gencpp.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_gencpp.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_gencpp.dir/rule
+
+# Convenience name for target.
+scara_robot_gencpp: scara_robot/CMakeFiles/scara_robot_gencpp.dir/rule
+
+.PHONY : scara_robot_gencpp
+
+# fast build rule for target.
+scara_robot_gencpp/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_gencpp.dir/build.make scara_robot/CMakeFiles/scara_robot_gencpp.dir/build
+.PHONY : scara_robot_gencpp/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_generate_messages_py.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_generate_messages_py.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_generate_messages_py.dir/rule
+
+# Convenience name for target.
+scara_robot_generate_messages_py: scara_robot/CMakeFiles/scara_robot_generate_messages_py.dir/rule
+
+.PHONY : scara_robot_generate_messages_py
+
+# fast build rule for target.
+scara_robot_generate_messages_py/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_generate_messages_py.dir/build.make scara_robot/CMakeFiles/scara_robot_generate_messages_py.dir/build
+.PHONY : scara_robot_generate_messages_py/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_generate_messages_cpp.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_generate_messages_cpp.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+scara_robot_generate_messages_cpp: scara_robot/CMakeFiles/scara_robot_generate_messages_cpp.dir/rule
+
+.PHONY : scara_robot_generate_messages_cpp
+
+# fast build rule for target.
+scara_robot_generate_messages_cpp/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_generate_messages_cpp.dir/build.make scara_robot/CMakeFiles/scara_robot_generate_messages_cpp.dir/build
+.PHONY : scara_robot_generate_messages_cpp/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_gennodejs.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_gennodejs.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_gennodejs.dir/rule
+
+# Convenience name for target.
+scara_robot_gennodejs: scara_robot/CMakeFiles/scara_robot_gennodejs.dir/rule
+
+.PHONY : scara_robot_gennodejs
+
+# fast build rule for target.
+scara_robot_gennodejs/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_gennodejs.dir/build.make scara_robot/CMakeFiles/scara_robot_gennodejs.dir/build
+.PHONY : scara_robot_gennodejs/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/_scara_robot_generate_messages_check_deps_scara_robot_pose.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/_scara_robot_generate_messages_check_deps_scara_robot_pose.dir/rule
+.PHONY : scara_robot/CMakeFiles/_scara_robot_generate_messages_check_deps_scara_robot_pose.dir/rule
+
+# Convenience name for target.
+_scara_robot_generate_messages_check_deps_scara_robot_pose: scara_robot/CMakeFiles/_scara_robot_generate_messages_check_deps_scara_robot_pose.dir/rule
+
+.PHONY : _scara_robot_generate_messages_check_deps_scara_robot_pose
+
+# fast build rule for target.
+_scara_robot_generate_messages_check_deps_scara_robot_pose/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/_scara_robot_generate_messages_check_deps_scara_robot_pose.dir/build.make scara_robot/CMakeFiles/_scara_robot_generate_messages_check_deps_scara_robot_pose.dir/build
+.PHONY : _scara_robot_generate_messages_check_deps_scara_robot_pose/fast
+
+# Convenience name for target.
 scara_robot/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
 	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 .PHONY : scara_robot/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
@@ -181,6 +331,21 @@ sensor_msgs_generate_messages_py: scara_robot/CMakeFiles/sensor_msgs_generate_me
 sensor_msgs_generate_messages_py/fast:
 	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make scara_robot/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 .PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 scara_robot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -303,19 +468,19 @@ std_msgs_generate_messages_eus/fast:
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+scara_robot/CMakeFiles/scara_robot_generate_messages_lisp.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_generate_messages_lisp.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+scara_robot_generate_messages_lisp: scara_robot/CMakeFiles/scara_robot_generate_messages_lisp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : scara_robot_generate_messages_lisp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+scara_robot_generate_messages_lisp/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_generate_messages_lisp.dir/build.make scara_robot/CMakeFiles/scara_robot_generate_messages_lisp.dir/build
+.PHONY : scara_robot_generate_messages_lisp/fast
 
 # Convenience name for target.
 scara_robot/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
@@ -331,6 +496,36 @@ sensor_msgs_generate_messages_lisp: scara_robot/CMakeFiles/sensor_msgs_generate_
 sensor_msgs_generate_messages_lisp/fast:
 	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make scara_robot/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make scara_robot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+scara_robot/CMakeFiles/scara_robot_generate_messages.dir/rule:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/scara_robot_generate_messages.dir/rule
+.PHONY : scara_robot/CMakeFiles/scara_robot_generate_messages.dir/rule
+
+# Convenience name for target.
+scara_robot_generate_messages: scara_robot/CMakeFiles/scara_robot_generate_messages.dir/rule
+
+.PHONY : scara_robot_generate_messages
+
+# fast build rule for target.
+scara_robot_generate_messages/fast:
+	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/scara_robot_generate_messages.dir/build.make scara_robot/CMakeFiles/scara_robot_generate_messages.dir/build
+.PHONY : scara_robot_generate_messages/fast
 
 # Convenience name for target.
 scara_robot/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -377,21 +572,6 @@ geometry_msgs_generate_messages_py/fast:
 	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make scara_robot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
-# Convenience name for target.
-scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(MAKE) -f scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make scara_robot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -401,7 +581,19 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
+	@echo "... scara_robot_genpy"
+	@echo "... scara_robot_generate_messages_nodejs"
+	@echo "... scara_robot_genlisp"
+	@echo "... scara_robot_geneus"
+	@echo "... scara_robot_generate_messages_eus"
+	@echo "... scara_robot_gencpp"
+	@echo "... scara_robot_generate_messages_py"
+	@echo "... scara_robot_generate_messages_cpp"
+	@echo "... scara_robot_gennodejs"
+	@echo "... _scara_robot_generate_messages_check_deps_scara_robot_pose"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... test"
+	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_cpp"
@@ -411,15 +603,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
+	@echo "... rebuild_cache"
+	@echo "... scara_robot_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
 	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... rebuild_cache"
-	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... scara_robot_generate_messages"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... test"
 .PHONY : help
 
 

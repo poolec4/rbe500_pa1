@@ -41,19 +41,17 @@
 		
 		\item Include the robot definition file.
 		\\
-		
-		Include \href{http://wiki.ros.org/joint_state_publisher}{\texttt{joint\_state\_publisher}}
-		
-		Reference this \href{https://answers.ros.org/question/348008/connecting-gazebo-and-rviz/}{connecting-gazebo-and-rviz}
-		
-		\item \texttt{roslaunch rrbot\_gazebo rrbot\_world.launch}
-		\item Set PID gains in \texttt{rrbot\_control.yaml} to zero
-		\item \texttt{roslaunch rrbot\_control rrbot\_control.launch}
-		\item \texttt{rostopic list}
-		\item \texttt{rostopic echo /rrbot.joint\_states}
-		\item \texttt{rosrun scara\_robot configuration\_to\_operational\_sub.py}
 	\end{itemize}
+
+	Include \href{http://wiki.ros.org/joint_state_publisher}{\texttt{joint\_state\_publisher}}
 	
+	Reference this \href{https://answers.ros.org/question/348008/connecting-gazebo-and-rviz/}{connecting-gazebo-and-rviz}
+	\\
+	
+	To begin the simulation:
+	\begin{itemize}
+		\item \texttt{roslaunch rrbot\_gazebo rrbot\_world.launch}
+	\end{itemize}	
 	
 	\item \textbf{Forward Kinematics:}
 	Implement a FK node that
@@ -146,6 +144,24 @@
 	
 	This will be used in the forward kinematic subscriber's callback function.
 	
+
+	To run and test the subscriber/publisher function:
+	
+	\begin{itemize}
+		\item Run \texttt{roslaunch rrbot\_gazebo rrbot\_world.launch}
+		\item Set all PID gains in \texttt{rrbot\_control.yaml} to zero
+		\item In a new window \texttt{roslaunch rrbot\_control rrbot\_control.launch} which allows the joint states to be published.
+		\item In a new window \texttt{rostopic list} should show /rrbot.joint\_states
+		\item \texttt{rostopic echo /rrbot.joint\_states} should show the joint states printing
+		\item \texttt{rosrun scara\_robot configuration\_to\_operational\_sub.py} will run the program that subscribes to the joint states, calculates the forward kinematics, and publishes the end-effector pose back to the \texttt{Pose} topic. The print out can be seen below:
+		
+		\begin{figure}[h]
+			\centering
+			%\includegraphics[width=0.6\textwidth]{figures/sub_pub_results.png}
+		\end{figure}
+		
+	\end{itemize}
+
 	\item \textbf{Inverse Kinematics:}
 	
 	\begin{itemize}
@@ -157,7 +173,7 @@
 	The following definitions can be used to calculate the inverse kinematics:
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figures/rrp_IK.png}
+		%\includegraphics[width=0.8\textwidth]{figures/rrp_IK.png}
 	\end{figure}
 	
 \end{enumerate}
