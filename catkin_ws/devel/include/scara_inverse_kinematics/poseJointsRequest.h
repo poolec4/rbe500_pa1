@@ -24,63 +24,18 @@ struct poseJointsRequest_
   typedef poseJointsRequest_<ContainerAllocator> Type;
 
   poseJointsRequest_()
-    : r11(0.0)
-    , r12(0.0)
-    , r13(0.0)
-    , r21(0.0)
-    , r22(0.0)
-    , r23(0.0)
-    , r31(0.0)
-    , r32(0.0)
-    , r33(0.0)
-    , x(0.0)
+    : x(0.0)
     , y(0.0)
     , z(0.0)  {
     }
   poseJointsRequest_(const ContainerAllocator& _alloc)
-    : r11(0.0)
-    , r12(0.0)
-    , r13(0.0)
-    , r21(0.0)
-    , r22(0.0)
-    , r23(0.0)
-    , r31(0.0)
-    , r32(0.0)
-    , r33(0.0)
-    , x(0.0)
+    : x(0.0)
     , y(0.0)
     , z(0.0)  {
   (void)_alloc;
     }
 
 
-
-   typedef double _r11_type;
-  _r11_type r11;
-
-   typedef double _r12_type;
-  _r12_type r12;
-
-   typedef double _r13_type;
-  _r13_type r13;
-
-   typedef double _r21_type;
-  _r21_type r21;
-
-   typedef double _r22_type;
-  _r22_type r22;
-
-   typedef double _r23_type;
-  _r23_type r23;
-
-   typedef double _r31_type;
-  _r31_type r31;
-
-   typedef double _r32_type;
-  _r32_type r32;
-
-   typedef double _r33_type;
-  _r33_type r33;
 
    typedef double _x_type;
   _x_type x;
@@ -120,16 +75,7 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::scara_inverse_kinematics::poseJointsRequest_<ContainerAllocator1> & lhs, const ::scara_inverse_kinematics::poseJointsRequest_<ContainerAllocator2> & rhs)
 {
-  return lhs.r11 == rhs.r11 &&
-    lhs.r12 == rhs.r12 &&
-    lhs.r13 == rhs.r13 &&
-    lhs.r21 == rhs.r21 &&
-    lhs.r22 == rhs.r22 &&
-    lhs.r23 == rhs.r23 &&
-    lhs.r31 == rhs.r31 &&
-    lhs.r32 == rhs.r32 &&
-    lhs.r33 == rhs.r33 &&
-    lhs.x == rhs.x &&
+  return lhs.x == rhs.x &&
     lhs.y == rhs.y &&
     lhs.z == rhs.z;
 }
@@ -188,12 +134,12 @@ struct MD5Sum< ::scara_inverse_kinematics::poseJointsRequest_<ContainerAllocator
 {
   static const char* value()
   {
-    return "70a12bf1f2d02af123ce0de58d137cf7";
+    return "4a842b65f413084dc2b10fb484ea7f17";
   }
 
   static const char* value(const ::scara_inverse_kinematics::poseJointsRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x70a12bf1f2d02af1ULL;
-  static const uint64_t static_value2 = 0x23ce0de58d137cf7ULL;
+  static const uint64_t static_value1 = 0x4a842b65f413084dULL;
+  static const uint64_t static_value2 = 0xc2b10fb484ea7f17ULL;
 };
 
 template<class ContainerAllocator>
@@ -212,16 +158,7 @@ struct Definition< ::scara_inverse_kinematics::poseJointsRequest_<ContainerAlloc
 {
   static const char* value()
   {
-    return "float64 r11\n"
-"float64 r12\n"
-"float64 r13\n"
-"float64 r21\n"
-"float64 r22\n"
-"float64 r23\n"
-"float64 r31\n"
-"float64 r32\n"
-"float64 r33\n"
-"float64 x\n"
+    return "float64 x\n"
 "float64 y\n"
 "float64 z\n"
 ;
@@ -242,15 +179,6 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.r11);
-      stream.next(m.r12);
-      stream.next(m.r13);
-      stream.next(m.r21);
-      stream.next(m.r22);
-      stream.next(m.r23);
-      stream.next(m.r31);
-      stream.next(m.r32);
-      stream.next(m.r33);
       stream.next(m.x);
       stream.next(m.y);
       stream.next(m.z);
@@ -272,24 +200,6 @@ struct Printer< ::scara_inverse_kinematics::poseJointsRequest_<ContainerAllocato
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::scara_inverse_kinematics::poseJointsRequest_<ContainerAllocator>& v)
   {
-    s << indent << "r11: ";
-    Printer<double>::stream(s, indent + "  ", v.r11);
-    s << indent << "r12: ";
-    Printer<double>::stream(s, indent + "  ", v.r12);
-    s << indent << "r13: ";
-    Printer<double>::stream(s, indent + "  ", v.r13);
-    s << indent << "r21: ";
-    Printer<double>::stream(s, indent + "  ", v.r21);
-    s << indent << "r22: ";
-    Printer<double>::stream(s, indent + "  ", v.r22);
-    s << indent << "r23: ";
-    Printer<double>::stream(s, indent + "  ", v.r23);
-    s << indent << "r31: ";
-    Printer<double>::stream(s, indent + "  ", v.r31);
-    s << indent << "r32: ";
-    Printer<double>::stream(s, indent + "  ", v.r32);
-    s << indent << "r33: ";
-    Printer<double>::stream(s, indent + "  ", v.r33);
     s << indent << "x: ";
     Printer<double>::stream(s, indent + "  ", v.x);
     s << indent << "y: ";

@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::scara_inverse_kinematics::poseJoints > {
   static const char* value()
   {
-    return "998f1ed04f61522c2efafb2090670f73";
+    return "cabb4d8365c1affb33eb07e1622932fc";
   }
 
   static const char* value(const ::scara_inverse_kinematics::poseJoints&) { return value(); }

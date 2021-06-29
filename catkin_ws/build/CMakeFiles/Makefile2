@@ -494,11 +494,15 @@ scara_robot/scara_gazebo/preinstall:
 # Directory level rules for directory scara_robot/scara_inverse_kinematics
 
 # Convenience name for "all" pass in the directory.
+scara_robot/scara_inverse_kinematics/all: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/all
+scara_robot/scara_inverse_kinematics/all: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/all
 scara_robot/scara_inverse_kinematics/all: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages.dir/all
 
 .PHONY : scara_robot/scara_inverse_kinematics/all
 
 # Convenience name for "clean" pass in the directory.
+scara_robot/scara_inverse_kinematics/clean: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/clean
+scara_robot/scara_inverse_kinematics/clean: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/clean
 scara_robot/scara_inverse_kinematics/clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_genpy.dir/clean
 scara_robot/scara_inverse_kinematics/clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/clean
 scara_robot/scara_inverse_kinematics/clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_gennodejs.dir/clean
@@ -533,6 +537,80 @@ scara_robot/scara_inverse_kinematics/clean: scara_robot/scara_inverse_kinematics
 scara_robot/scara_inverse_kinematics/preinstall:
 
 .PHONY : scara_robot/scara_inverse_kinematics/preinstall
+
+#=============================================================================
+# Target rules for target scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir
+
+# All Build rule for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_gencpp.dir/all
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/depend
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=12,13 "Built target inverse_client"
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/all
+
+# Include target in all.
+all: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles 0
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule
+
+# Convenience name for target.
+inverse_client: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule
+
+.PHONY : inverse_client
+
+# clean rule for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/clean:
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/clean
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/clean
+
+# clean rule for target.
+clean: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir
+
+# All Build rule for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_gencpp.dir/all
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/depend
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=14,15 "Built target inverse_server"
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/all
+
+# Include target in all.
+all: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles 0
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule
+
+# Convenience name for target.
+inverse_server: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule
+
+.PHONY : inverse_server
+
+# clean rule for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/clean:
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/clean
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/clean
+
+# clean rule for target.
+clean: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_genpy.dir
@@ -573,7 +651,7 @@ clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_
 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/_scara_inverse_kinematics_generate_messages_check_deps_poseJoints.dir/all
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/depend
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=24,25 "Built target scara_inverse_kinematics_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=28,29 "Built target scara_inverse_kinematics_generate_messages_py"
 .PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -637,7 +715,7 @@ clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_
 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_nodejs.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/_scara_inverse_kinematics_generate_messages_check_deps_poseJoints.dir/all
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_nodejs.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_nodejs.dir/depend
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_nodejs.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=23 "Built target scara_inverse_kinematics_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=27 "Built target scara_inverse_kinematics_generate_messages_nodejs"
 .PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -701,7 +779,7 @@ clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_
 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_lisp.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/_scara_inverse_kinematics_generate_messages_check_deps_poseJoints.dir/all
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_lisp.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_lisp.dir/depend
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_lisp.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=22 "Built target scara_inverse_kinematics_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=26 "Built target scara_inverse_kinematics_generate_messages_lisp"
 .PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -733,7 +811,7 @@ clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_
 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_eus.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/_scara_inverse_kinematics_generate_messages_check_deps_poseJoints.dir/all
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_eus.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_eus.dir/depend
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_eus.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=20,21 "Built target scara_inverse_kinematics_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=24,25 "Built target scara_inverse_kinematics_generate_messages_eus"
 .PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -765,7 +843,7 @@ clean: scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_
 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_cpp.dir/all: scara_robot/scara_inverse_kinematics/CMakeFiles/_scara_inverse_kinematics_generate_messages_check_deps_poseJoints.dir/all
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_cpp.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_cpp.dir/depend
 	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_cpp.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=19 "Built target scara_inverse_kinematics_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=23 "Built target scara_inverse_kinematics_generate_messages_cpp"
 .PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1454,7 +1532,7 @@ scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generat
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_py.dir/all: scara_robot/scara_forward_kinematics/CMakeFiles/_scara_forward_kinematics_generate_messages_check_deps_scara_robot_pose.dir/all
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_py.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_py.dir/depend
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_py.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=17,18 "Built target scara_forward_kinematics_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=21,22 "Built target scara_forward_kinematics_generate_messages_py"
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1519,7 +1597,7 @@ scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generat
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_lisp.dir/all: scara_robot/scara_forward_kinematics/CMakeFiles/_scara_forward_kinematics_generate_messages_check_deps_scara_robot_pose.dir/all
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_lisp.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_lisp.dir/depend
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_lisp.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=15 "Built target scara_forward_kinematics_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=19 "Built target scara_forward_kinematics_generate_messages_lisp"
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1721,7 +1799,7 @@ scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generat
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_eus.dir/all: scara_robot/scara_forward_kinematics/CMakeFiles/_scara_forward_kinematics_generate_messages_check_deps_scara_robot_pose.dir/all
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_eus.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_eus.dir/depend
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_eus.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=13,14 "Built target scara_forward_kinematics_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=17,18 "Built target scara_forward_kinematics_generate_messages_eus"
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1850,7 +1928,7 @@ scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generat
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_cpp.dir/all: scara_robot/scara_forward_kinematics/CMakeFiles/_scara_forward_kinematics_generate_messages_check_deps_scara_robot_pose.dir/all
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_cpp.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_cpp.dir/depend
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_cpp.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=12 "Built target scara_forward_kinematics_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=16 "Built target scara_forward_kinematics_generate_messages_cpp"
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1947,7 +2025,7 @@ scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generat
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_nodejs.dir/all: scara_robot/scara_forward_kinematics/CMakeFiles/_scara_forward_kinematics_generate_messages_check_deps_scara_robot_pose.dir/all
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_nodejs.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_nodejs.dir/depend
 	$(MAKE) -f scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_nodejs.dir/build.make scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=16 "Built target scara_forward_kinematics_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/chris/rbe500_team2_pa1/catkin_ws/build/CMakeFiles --progress-num=20 "Built target scara_forward_kinematics_generate_messages_nodejs"
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.

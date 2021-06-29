@@ -205,3 +205,11 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(inverse_server src/inverse_server.cpp)
+target_link_libraries(inverse_server ${catkin_LIBRARIES})
+add_dependencies(inverse_server scara_inverse_kinematics_gencpp)
+
+add_executable(inverse_client src/inverse_client.cpp)
+target_link_libraries(inverse_client ${catkin_LIBRARIES})
+add_dependencies(inverse_client scara_inverse_kinematics_gencpp)

@@ -298,6 +298,32 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named inverse_client
+
+# Build rule for target.
+inverse_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 inverse_client
+.PHONY : inverse_client
+
+# fast build rule for target.
+inverse_client/fast:
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build
+.PHONY : inverse_client/fast
+
+#=============================================================================
+# Target rules for targets named inverse_server
+
+# Build rule for target.
+inverse_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 inverse_server
+.PHONY : inverse_server
+
+# fast build rule for target.
+inverse_server/fast:
+	$(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build
+.PHONY : inverse_server/fast
+
+#=============================================================================
 # Target rules for targets named scara_inverse_kinematics_genpy
 
 # Build rule for target.
@@ -957,6 +983,8 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... inverse_client"
+	@echo "... inverse_server"
 	@echo "... scara_inverse_kinematics_genpy"
 	@echo "... scara_inverse_kinematics_generate_messages_py"
 	@echo "... scara_inverse_kinematics_gennodejs"

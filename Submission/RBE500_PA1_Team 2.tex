@@ -36,7 +36,7 @@
 
 \textbf{Package overview:}
 \begin{itemize}
-	\item The main package is \texttt{scara\_robot}. It does not directly contain any nodes or launch files, but is a way to organize all of the other nodes.
+	\item Inside \texttt{catkin\_ws/src}, the main package is \texttt{scara\_robot}. It does not directly contain any nodes or launch files, but is a way to organize all of the other nodes.
 	\begin{itemize}
 		\item The \texttt{scara\_gazebo} package includes the launch files for the gazebo world.
 		\item The \texttt{scara\_description} package includes the URDF files for the robot as well as the rviz launch files.
@@ -257,11 +257,11 @@ def calc_homogeneous_transform(q): # calculate the homogeneous transform from th
 	\end{itemize}
 
 	The following definitions can be used to calculate the inverse kinematics:
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{figures/rrp_IK.png}
+		\includegraphics[width=0.75\textwidth]{figures/rrp_IK.png}
 	\end{figure}
-	\\
+	
 	The large right triangle can be used to calculate the following:
 	\begin{align*}
 		r &= \sqrt{p_x^2 + p_y^2} \\
@@ -298,15 +298,46 @@ double C = (((l1*l1)+x*x+y*y-(l2*l2))/(2*l1*sqrt(x*x+y*y)));
 double B = sqrt(1-D*D);
 double E = sqrt(1-C*C);
 
-double alpha = atan2(y, x);
+double F = x/sqrt(x*x+y*y);
+double G = sqrt(1-F*F);	
+double alpha = atan2(G, F);
 
 res.theta1 = alpha-atan2(E, C);
 res.theta2 = atan2(B, D);
 res.d3 = d1 - z;
 \end{lstlisting}
 
-To run the node:
+To test the node:
+\begin{itemize}
+	\item \texttt{rosrun scara\_inverse\_kinematics inverse\_server}
+	\item \texttt{rosrun scara\_inverse\_kinematics inverse\_client X Y Z}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\textwidth]{figures/client_print.png}
+	\end{figure}
 
+	\item The server will then print out the incoming message and send back the response. The following shows the home position (i.e. all joints at 0):
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\textwidth]{figures/server_print.png}
+	\end{figure}
+	
+	\item the server can also be tested using \texttt{rosservice}:
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\textwidth]{figures/rosservice_call.png}
+	\end{figure}
+	
+	which results in the following:
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\textwidth]{figures/server_rosservice.png}
+	\end{figure}
+\end{itemize}
 
 \end{enumerate}
 \end{document}

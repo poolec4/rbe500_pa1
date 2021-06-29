@@ -17,8 +17,8 @@ from scara_forward_kinematics.msg import scara_robot_pose # list of message vari
 
 debug = True
 
-d1 = 1 # <---- UPDATE
-l1 = 1 # <---- UPDATE
+d1 = 3.5 # <---- UPDATE
+l1 = 2 # <---- UPDATE
 l2 = 1 # <---- UPDATE
 
 def rot_to_euler(R): # converts a 3x3 rotation matrix to ZYZ Euler angles

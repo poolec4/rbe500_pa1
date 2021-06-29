@@ -60,6 +60,8 @@
 /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/install/local.dir
 /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/rebuild_cache.dir
 /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/test.dir
+/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir
+/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir
 /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_genpy.dir
 /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/install/strip.dir
 /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_generate_messages_py.dir

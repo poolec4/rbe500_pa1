@@ -31,19 +31,7 @@ bool findJoints(scara_inverse_kinematics::poseJoints::Request &req, scara_invers
 	//need to change, currently only taking in part of pose
 	//pose = orientation + position, only have position
 	
-	double l1, l2, d1; //link lengths and original distance needs to be defined
-
-	double r11 = req.r11;
-	double r12 = req.r12;
-	double r13 = req.r13;
-
-	double r21 = req.r21;
-	double r22 = req.r22;
-	double r23 = req.r23;
-
-	double r31 = req.r31;
-	double r32 = req.r32;
-	double r33 = req.r33;
+	double l1 = 2, l2 = 1, d1 = 3.5; //link lengths and original distance needs to be defined
 
 	double x = req.x;
 	double y = req.y;
@@ -63,8 +51,8 @@ bool findJoints(scara_inverse_kinematics::poseJoints::Request &req, scara_invers
 	res.theta2 = atan2(B, D);
 	res.d3 = d1 - z;
 
-	ROS_INFO("request:r11=%1f, r12=%1f, r13=%1f, r21=%1f, r22=%1f, r23=%1f, r31=%1f, r32=%1f, r33=%1f, i=%1f, y=%1f, z=%1f", x, y,z);
-	ROS_INFO("sending back response: theta1=%1f, theta2=%1f, d3=%1f", res.theta1, res.theta2, res.d3);
+	ROS_INFO("request: x=%f, y=%f, z=%f", x, y ,z);
+	ROS_INFO("sending back response: theta1=%f, theta2=%f, d3=%f", res.theta1, res.theta2, res.d3);
 }
 
 int main(int argc, char **argv)
@@ -72,7 +60,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "inverse_server");
 	ros::NodeHandle n;
 
-	ros::ServiceServer service = n.advertiseService("inverse", findJoints);
+	ros::ServiceServer service = n.advertiseService("inverse_server", findJoints);
 	ROS_INFO("Ready to find Joints.");
 	ros::spin();
 

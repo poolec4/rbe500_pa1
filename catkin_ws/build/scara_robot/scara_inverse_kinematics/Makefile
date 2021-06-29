@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule
+
+# Convenience name for target.
+inverse_client: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/rule
+
+.PHONY : inverse_client
+
+# fast build rule for target.
+inverse_client/fast:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build
+.PHONY : inverse_client/fast
+
+# Convenience name for target.
+scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule
+.PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule
+
+# Convenience name for target.
+inverse_server: scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/rule
+
+.PHONY : inverse_server
+
+# fast build rule for target.
+inverse_server/fast:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build
+.PHONY : inverse_server/fast
+
+# Convenience name for target.
 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_genpy.dir/rule:
 	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_genpy.dir/rule
 .PHONY : scara_robot/scara_inverse_kinematics/CMakeFiles/scara_inverse_kinematics_genpy.dir/rule
@@ -572,6 +602,60 @@ std_msgs_generate_messages_py/fast:
 	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/std_msgs_generate_messages_py.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/inverse_client.o: src/inverse_client.cpp.o
+
+.PHONY : src/inverse_client.o
+
+# target to build an object file
+src/inverse_client.cpp.o:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/src/inverse_client.cpp.o
+.PHONY : src/inverse_client.cpp.o
+
+src/inverse_client.i: src/inverse_client.cpp.i
+
+.PHONY : src/inverse_client.i
+
+# target to preprocess a source file
+src/inverse_client.cpp.i:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/src/inverse_client.cpp.i
+.PHONY : src/inverse_client.cpp.i
+
+src/inverse_client.s: src/inverse_client.cpp.s
+
+.PHONY : src/inverse_client.s
+
+# target to generate assembly for a file
+src/inverse_client.cpp.s:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_client.dir/src/inverse_client.cpp.s
+.PHONY : src/inverse_client.cpp.s
+
+src/inverse_server.o: src/inverse_server.cpp.o
+
+.PHONY : src/inverse_server.o
+
+# target to build an object file
+src/inverse_server.cpp.o:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/src/inverse_server.cpp.o
+.PHONY : src/inverse_server.cpp.o
+
+src/inverse_server.i: src/inverse_server.cpp.i
+
+.PHONY : src/inverse_server.i
+
+# target to preprocess a source file
+src/inverse_server.cpp.i:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/src/inverse_server.cpp.i
+.PHONY : src/inverse_server.cpp.i
+
+src/inverse_server.s: src/inverse_server.cpp.s
+
+.PHONY : src/inverse_server.s
+
+# target to generate assembly for a file
+src/inverse_server.cpp.s:
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(MAKE) -f scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/build.make scara_robot/scara_inverse_kinematics/CMakeFiles/inverse_server.dir/src/inverse_server.cpp.s
+.PHONY : src/inverse_server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -581,6 +665,8 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... inverse_client"
+	@echo "... inverse_server"
 	@echo "... scara_inverse_kinematics_genpy"
 	@echo "... install/strip"
 	@echo "... scara_inverse_kinematics_generate_messages_py"
@@ -612,6 +698,12 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... src/inverse_client.o"
+	@echo "... src/inverse_client.i"
+	@echo "... src/inverse_client.s"
+	@echo "... src/inverse_server.o"
+	@echo "... src/inverse_server.i"
+	@echo "... src/inverse_server.s"
 .PHONY : help
 
 
