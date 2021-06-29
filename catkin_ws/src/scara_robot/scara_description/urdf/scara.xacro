@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Revolute-Revolute Manipulator -->
-<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="scara" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
@@ -13,9 +13,9 @@
   <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find rrbot_description)/urdf/rrbot.gazebo" />
+  <xacro:include filename="$(find scara_description)/urdf/scara.gazebo" />
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find rrbot_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find scara_description)/urdf/materials.xacro" />
 
   <!-- Used for fixing robot to Gazebo 'base_link' -->
   <link name="world"/>
@@ -30,14 +30,14 @@
     <collision>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <geometry>
-	<cylinder length="${height1}" radius="0.2"/>
+	 <cylinder length="${height1}" radius="0.2"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <geometry>
-	<cylinder length="${height1}" radius="0.2"/>
+	 <cylinder length="${height1}" radius="0.2"/>
       </geometry>
       <material name="orange"/>
     </visual>
@@ -65,14 +65,14 @@
     <collision>
       <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
       <geometry>
-	<cylinder length="${height1}" radius="0.2"/>
+	 <cylinder length="${height1}" radius="0.2"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
       <geometry>
-	<cylinder length="${height1}" radius="0.2"/>
+	 <cylinder length="${height1}" radius="0.2"/>
       </geometry>
       <material name="red"/>
     </visual>
@@ -94,23 +94,20 @@
     <dynamics damping="0.7"/>
   </joint>
 
-
   <link name="link3">
     <collision>
       <origin xyz="0 0 1.25" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} 2.5"/>
+	 <box size="${width} ${width} 2.5"/>
       </geometry>
     </collision>
-
     <visual>
       <origin xyz="0 0 1.25" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} 2.5"/>
+	 <box size="${width} ${width} 2.5"/>
       </geometry>
       <material name="orange"/>
     </visual>
-
     <inertial>
       <origin xyz="0 0 1.25" rpy="0 0 0"/>
       <mass value="${mass}"/>
@@ -134,18 +131,17 @@
     <collision>
       <origin xyz="0 0 1.5" rpy="0 0 0"/>
       <geometry>
-	<cylinder length="1" radius="${width}"/>
+	 <cylinder length="1" radius="${width}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 1.5" rpy="0 0 0"/>
       <geometry>
-	<cylinder length="1" radius="${width}"/>
+	 <cylinder length="1" radius="${width}"/>
       </geometry>
       <material name="blue"/>
     </visual>
-
     <inertial>
       <origin xyz="0 0 1.5" rpy="0 0 0"/>
       <mass value="${mass}"/>
@@ -167,14 +163,14 @@
     <collision>
       <origin xyz="0 0 1.5" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} 1"/>
+	 <box size="${width} ${width} 1"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 1.5" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} 1"/>
+	 <box size="${width} ${width} 1"/>
       </geometry>
       <material name="red"/>
     </visual>
@@ -203,14 +199,14 @@
     <collision>
       <origin xyz="0 0 2" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} 2"/>
+	 <box size="${width} ${width} 2"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 2" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} 2"/>
+	 <box size="${width} ${width} 2"/>
       </geometry>
       <material name="green"/>
     </visual>
@@ -225,8 +221,6 @@
     </inertial>
   </link>
 
-
-
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0" />
     <origin xyz="${camera_link} 0 ${height3 - axel_offset*2}" rpy="0 0 0"/>
@@ -239,14 +233,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	<box size="${camera_link} ${camera_link} ${camera_link}"/>
+	 <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	<box size="${camera_link} ${camera_link} ${camera_link}"/>
+	 <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
       <material name="red"/>
     </visual>
@@ -284,7 +278,7 @@
 
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint2">
+    <joint name="joint3">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor2">
@@ -292,5 +286,20 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/scara</robotNamespace>
+  </plugin>
 
 </robot>
