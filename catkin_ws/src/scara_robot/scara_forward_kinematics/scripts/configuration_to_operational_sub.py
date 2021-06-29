@@ -15,6 +15,8 @@ from tf.transformations import euler_from_quaternion
 from sensor_msgs.msg import JointState
 from scara_forward_kinematics.msg import scara_robot_pose # list of message variables
 
+debug = True
+
 d1 = 1 # <---- UPDATE
 l1 = 1 # <---- UPDATE
 l2 = 1 # <---- UPDATE
@@ -51,7 +53,8 @@ def callback(data):
 	th2 = data.position[1]
 	d3 = data.position[2]
 
-	print("\n\nReceived joint parameters: [%f, %f, %f] (th1,th2,d3) (radians, meters)" % (th1,th2,d3)) # printing received data to terminal
+	if debug == True:
+		print("\n\nReceived joint parameters: [%f, %f, %f] (th1,th2,d3) (radians, meters)" % (th1,th2,d3)) # printing received data to terminal
 
 	q = np.array([th1,th2,d3]) # combine joint configurations into array (radians, meters) 
 
@@ -71,13 +74,15 @@ def callback(data):
 	msg.psi = eangles_EE[2]
 
 	pose_publisher.publish(msg)
-	print("\nConverted end-effector pose: p = [%f, %f, %f, %f, %f, %f] (x,y,z,phi,theta,psi) (ZYZ) (meters, radians)" % (d_EE[0],d_EE[1],d_EE[2],eangles_EE[0],eangles_EE[1],eangles_EE[2])) # printing converted values to terminal
+	
+	if debug == True:
+		print("\nConverted end-effector pose: p = [%f, %f, %f, %f, %f, %f] (x,y,z,phi,theta,psi) (ZYZ) (meters, radians)" % (d_EE[0],d_EE[1],d_EE[2],eangles_EE[0],eangles_EE[1],eangles_EE[2])) # printing converted values to terminal
 
 def listener(): # function that loops continuously waiting for incoming messages
     rospy.init_node('configuration_to_operational_sub') # initialize node
     rospy.Subscriber('/scara_robot/joint_states', JointState, callback) # initialize subscriber under /scara_robot/joint_states topic name, JointState as the message, and the callback function
 
-    pose_publisher = rospy.Publisher("pose_publisher", scara_robot_pose, queue_size = 1)
+    pose_publisher = rospy.Publisher("/scara_robot/pose", scara_robot_pose, queue_size = 1)
 
     rospy.spin() # keep node running
 

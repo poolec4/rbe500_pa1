@@ -142,23 +142,41 @@
 		T_4^0 = T_1^0 T_2^1 T_3^2 T_4^3
 	\end{align*}
 	
-	This will be used in the forward kinematic subscriber's callback function.
+	This calculation is used in the forward kinematic function \texttt{calc\_homogeneous\_transform(q)}:
+	
+\begin{lstlisting}[style=Matlab-editor,basicstyle=\mlttfamily,escapechar=`]
+def calc_homogeneous_transform(q): # calculate the homogeneous transform from the base frame to EE
+	# q = [th1, th2, d3]
+	th1 = q[0]
+	th2 = q[1]
+	d3 = q[2]
+	
+	T1_0 = np.matrix([[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]) # frame 1 w.r.t 0
+	T2_1 = np.matrix([[math.cos(th1),-math.sin(th1),0,l1*math.cos(th1)],[math.sin(th1),math.cos(th1),0,l1*math.sin(th1)],[0,0,1,d1],[0,0,0,1]])	# frame 2 w.r.t 1 
+	T3_2 = np.matrix([[math.cos(th2),-math.sin(th2),0,l2*math.cos(th2)],[math.sin(th2),math.cos(th2),0,l2*math.sin(th2)],[0,0,1,0],[0,0,0,1]])	# frame 3 w.r.t 2 
+	T4_3 = np.matrix([[1,0,0,0],[0,1,0,0],[0,0,1,-d3],[0,0,0,1]]) # frame 4 w.r.t 3
+	
+	T_EE = T1_0.dot(T2_1).dot(T3_2).dot(T4_3)
+	
+	return T_EE
+\end{lstlisting}
 	
 
 	To run and test the subscriber/publisher function:
 	
 	\begin{itemize}
-		\item Run \texttt{roslaunch rrbot\_gazebo rrbot\_world.launch}
-		\item Set all PID gains in \texttt{rrbot\_control.yaml} to zero
-		\item In a new window \texttt{roslaunch rrbot\_control rrbot\_control.launch} which allows the joint states to be published.
-		\item In a new window \texttt{rostopic list} should show /rrbot.joint\_states
-		\item \texttt{rostopic echo /rrbot.joint\_states} should show the joint states printing
-		\item \texttt{rosrun scara\_robot configuration\_to\_operational\_sub.py} will run the program that subscribes to the joint states, calculates the forward kinematics, and publishes the end-effector pose back to the \texttt{Pose} topic. The print out can be seen below:
+		\item Run \texttt{roslaunch scara\_gazebo scara\_world.launch}
+		\item In a new window \texttt{roslaunch gazebo\_publish gazebo\_publish.launch} which allows the joint states to be published.
+		\item In a new window \texttt{rostopic list} should show /scara/joint\_states
+		\item \texttt{rostopic echo /scara/joint\_states} should show the joint states printing
+		\item \texttt{rosrun scara\_forward\_kinematics configuration\_to\_operational\_sub.py} will run the program that subscribes to the joint states, calculates the forward kinematics, and publishes the end-effector pose back to the \texttt{Pose} topic. The print out can be seen below:
 		
 		\begin{figure}[h]
 			\centering
-			%\includegraphics[width=0.6\textwidth]{figures/sub_pub_results.png}
+			%\includegraphics[width=0.6\textwidth]{figures/sub_pub_print_results.png}
 		\end{figure}
+	
+		\item We can also see the \texttt{Pose} topic getting published by running \texttt{rostopic echo /scara\_robot/pose}
 		
 	\end{itemize}
 
@@ -173,9 +191,51 @@
 	The following definitions can be used to calculate the inverse kinematics:
 	\begin{figure}[h]
 		\centering
-		%\includegraphics[width=0.8\textwidth]{figures/rrp_IK.png}
+		\includegraphics[width=0.8\textwidth]{figures/rrp_IK.png}
 	\end{figure}
-	
+	\\
+	The large right triangle can be used to calculate the following:
+	\begin{align*}
+		r &= \sqrt{p_x^2 + p_y^2} \\
+		A &= \frac{p_x}{r} = \cos\alpha \Rightarrow
+		\sin \alpha = \pm \sqrt{1 - A^2} \Rightarrow \alpha = \atantwo\left(\pm \sqrt{1-A}, A\right)
+	\end{align*}
+	\\
+	The law of cosines can be used on the other triangle to calculate $\beta$ and $\theta_1$:
+	\begin{align*}
+		l_2^2 &= r^2 + l_1^2 - 2 r l_1 \cos\beta \\
+		\cos\beta & = \frac{r^2 + l_1^2 - l_2^2}{2 r l_1} = C \Rightarrow \sin\beta = \pm\sqrt{1-C^2} \\
+		\beta &= \atantwo\left(\pm\sqrt{1-C^2}, C\right) \\
+		\theta_1 &= \alpha - \beta
+	\end{align*}
+	\\
+	The law of cosines can be used again to calculate $\theta_1$:
+	\begin{align*}
+		r^2 &= l_1^2 + l_2^2 - 2 l_1 l_2 \cos(180-\theta_2) \\
+		r^2 &= l_1^2 + l_2^2 + 2 l_1 l_2 \cos(\theta_2) \\
+		\cos\theta_2 & = \frac{r^2 - l_1^2 - l_2^2}{2 l_1 l_2} = D \Rightarrow \sin\theta_2 = \pm\sqrt{1-D^2} \\
+		\theta_2 &= \atantwo\left(\pm\sqrt{1-D^2}, D\right)
+	\end{align*}
+	\\
+	Lastly, $d3$ is calculated simply as follows:
+	\begin{align*}
+		d_3 = d_1 - p_z
+	\end{align*}
+	\\
+	The above equations are included in the server \texttt{inverse\_server.cpp}:
+\begin{lstlisting}[style=Matlab-editor,basicstyle=\mlttfamily,escapechar=`]
+double D = - (((l1*l1)+(l2*l2)-(x*x+y*y))/(2*l1*l2));
+double C = (((l1*l1)+x*x+y*y-(l2*l2))/(2*l1*sqrt(x*x+y*y)));
+
+double B = sqrt(1-D*D);
+double E = sqrt(1-C*C);
+
+double alpha = atan2(y, x);
+
+res.theta1 = alpha-atan2(E, C);
+res.theta2 = atan2(B, D);
+res.d3 = d1 - z;
+\end{lstlisting}
 \end{enumerate}
 \end{document}
 

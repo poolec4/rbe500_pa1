@@ -1,0 +1,8 @@
+prefix=/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/install
+
+Name: scara_inverse_kinematics
+Description: Description of scara_inverse_kinematics
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs message_runtime
