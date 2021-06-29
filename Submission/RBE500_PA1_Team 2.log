@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.5.28)  28 JUN 2021 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.5.28)  29 JUN 2021 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,32 +495,35 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 \sectionRuleOffset@mlpr=\skip64
 \toks@mlpr=\toks25
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
+Package hyperref Info: Option `colorlinks' set `true' on input line 21.
 
-(./RBE500_PA1_Team 2.aux)
+(./RBE500_PA1_Team 2.aux
+
+LaTeX Warning: Label `tab:widgets' multiply defined.
+
+)
 \openout1 = `"RBE500_PA1_Team 2.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 30.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -557,7 +560,7 @@ LaTeX Font Info:    ... okay on input line 29.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 29.
+Package hyperref Info: Link coloring ON on input line 30.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -566,9 +569,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (./RBE500_PA1_Team 2.out) (./RBE500_PA1_Team 2.out)
 \@outlinefile=\write3
@@ -609,39 +612,36 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count138
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 39.
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
-
- []
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 46.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+<figures/rviz_robot.png, id=4, 655.44875pt x 569.12625pt>
+File: figures/rviz_robot.png Graphic file (type png)
+<use figures/rviz_robot.png>
+Package pdftex.def Info: figures/rviz_robot.png  used on input line 63.
+(pdftex.def)             Requested size: 203.80182pt x 176.95705pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
-
- []
-
-<figures/rrp_manipulator_reference_frames.png, id=6, 979.66pt x 573.14125pt>
-File: figures/rrp_manipulator_reference_frames.png Graphic file (type png)
-<use figures/rrp_manipulator_reference_frames.png>
-Package pdftex.def Info: figures/rrp_manipulator_reference_frames.png  used on 
-input line 71.
-(pdftex.def)             Requested size: 305.70468pt x 178.84383pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<figures/gazebo_robot.png, id=6, 748.7975pt x 664.4825pt>
+File: figures/gazebo_robot.png Graphic file (type png)
+<use figures/gazebo_robot.png>
+Package pdftex.def Info: figures/gazebo_robot.png  used on input line 68.
+(pdftex.def)             Requested size: 203.80182pt x 180.85243pt.
+
+Overfull \hbox (2.22166pt too wide) in paragraph at lines 61--71
+[]$[]$ $[]$ 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.48724pt.
@@ -650,42 +650,82 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- <./figures/rrp_manipulator_reference_frames.png>]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 147.
-LaTeX Font Info:    No file T1fvm.fd. on input line 147.
+ <./figures/rviz_robot.png> <./figures/gazebo_robot.png>]
+<figures/gazebo_robot_moved.png, id=24, 575.14874pt x 461.725pt>
+File: figures/gazebo_robot_moved.png Graphic file (type png)
+<use figures/gazebo_robot_moved.png>
+Package pdftex.def Info: figures/gazebo_robot_moved.png  used on input line 112
+.
+(pdftex.def)             Requested size: 254.75131pt x 204.51233pt.
+
+Overfull \hbox (3.37825pt too wide) in paragraph at lines 116--117
+[]\T1/cmr/m/n/10 The robot de-scrip-tion file and gaze-bo/rviz launch files can
+ be found in the \T1/cmtt/m/n/10 scara_description \T1/cmr/m/n/10 and \T1/cmtt/
+m/n/10 scara_gazebo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
+
+ []
+
+<figures/rrp_manipulator_reference_frames.png, id=25, 979.66pt x 573.14125pt>
+File: figures/rrp_manipulator_reference_frames.png Graphic file (type png)
+<use figures/rrp_manipulator_reference_frames.png>
+Package pdftex.def Info: figures/rrp_manipulator_reference_frames.png  used on 
+input line 133.
+(pdftex.def)             Requested size: 305.70468pt x 178.84383pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48724pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2 <./figures/gazebo_robot_moved.png>]
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 209.
+LaTeX Font Info:    No file T1fvm.fd. on input line 209.
 
 
 LaTeX Font Warning: Font shape `T1/fvm/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 147.
+(Font)              using `T1/cmr/m/n' instead on input line 209.
 
-LaTeX Font Info:    Try loading font information for TS1+fvm on input line 155.
+LaTeX Font Info:    Try loading font information for TS1+fvm on input line 217.
 
-LaTeX Font Info:    No file TS1fvm.fd. on input line 155.
+LaTeX Font Info:    No file TS1fvm.fd. on input line 217.
 
 LaTeX Font Warning: Font shape `TS1/fvm/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 155.
+(Font)              for symbol `textasteriskcentered' on input line 217.
 
-<figures/rrp_IK.png, id=28, 2797.45125pt x 1296.845pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48724pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3 <./figures/rrp_manipulator_reference_frames.png>]
+<figures/sub_pub_print_results.png, id=53, 1013.7875pt x 96.36pt>
+File: figures/sub_pub_print_results.png Graphic file (type png)
+<use figures/sub_pub_print_results.png>
+Package pdftex.def Info: figures/sub_pub_print_results.png  used on input line 
+238.
+(pdftex.def)             Requested size: 356.65028pt x 33.89851pt.
+<figures/pose_echo.png, id=54, 211.79124pt x 140.525pt>
+File: figures/pose_echo.png Graphic file (type png)
+<use figures/pose_echo.png>
+Package pdftex.def Info: figures/pose_echo.png  used on input line 245.
+(pdftex.def)             Requested size: 91.70674pt x 60.84697pt.
+<figures/rrp_IK.png, id=55, 2797.45125pt x 1296.845pt>
 File: figures/rrp_IK.png Graphic file (type png)
 <use figures/rrp_IK.png>
-Package pdftex.def Info: figures/rrp_IK.png  used on input line 194.
+Package pdftex.def Info: figures/rrp_IK.png  used on input line 262.
 (pdftex.def)             Requested size: 407.60365pt x 188.93806pt.
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.48724pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
 
-[2]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.48724pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[3 <./figures/rrp_IK.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 240.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -693,27 +733,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
+[4 <./figures/sub_pub_print_results.png> <./figures/pose_echo.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48724pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5 <./figures/rrp_IK.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
  (./RBE500_PA1_Team 2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 240.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
 Package rerunfilecheck Info: File `"RBE500_PA1_Team 2".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
  ) 
 Here is how much of TeX's memory you used:
- 11174 strings out of 494923
- 165164 string characters out of 6180742
- 361406 words of memory out of 5000000
- 14312 multiletter control sequences out of 15000+600000
+ 11209 strings out of 494923
+ 166010 string characters out of 6180742
+ 346480 words of memory out of 5000000
+ 14336 multiletter control sequences out of 15000+600000
  9060 words of font info for 28 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,14n,56p,325b,1924s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,14n,56p,937b,1992s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/chris/texmf/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/chris/
 texmf/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/chris/texmf/fonts/pk/l
 jfour/jknappen/ec/ecbx1000.600pk> </home/chris/texmf/fonts/pk/ljfour/jknappen/e
@@ -724,10 +776,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on "RBE500_PA1_Team 2.pdf" (4 pages, 297385 bytes).
+Output written on "RBE500_PA1_Team 2.pdf" (5 pages, 432026 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 38 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{amssymb}
+\usepackage{caption}
 \usepackage{amstext} % for \text macro
 \usepackage{array}   % for \newcolumntype macro
 \allowdisplaybreaks
@@ -33,6 +34,18 @@
 \setlength{\abovedisplayshortskip}{4pt}
 \setlength{\belowdisplayshortskip}{4pt}
 
+\textbf{Package overview:}
+\begin{itemize}
+	\item The main package is \texttt{scara\_robot}. It does not directly contain any nodes or launch files, but is a way to organize all of the other nodes.
+	\begin{itemize}
+		\item The \texttt{scara\_gazebo} package includes the launch files for the gazebo world.
+		\item The \texttt{scara\_description} package includes the URDF files for the robot as well as the rviz launch files.
+		\item The \texttt{gazebp\_publish} package includes the launch file to allow for the joint states to be published from gazebo.
+		\item The \texttt{scara\_forward\_kinematics} folder is the pub/sub package that subscribes to the joint states, calculates the forward kinematics, and publishes the pose.
+		\item The \texttt{scara\_inverse\_kinematics} folder is the service/client package that ingests a desired end effector pose and returns the joint position.
+	\end{itemize}
+\end{itemize}
+
 \begin{enumerate}
 	\item \textbf{Create the robot:}
 	
@@ -40,19 +53,68 @@
 		\item Spawn the robot to the ROS-Gazebo environment. Include and image of the robot.
 		
 		\item Include the robot definition file.
-		\\
 	\end{itemize}
 
-	Include \href{http://wiki.ros.org/joint_state_publisher}{\texttt{joint\_state\_publisher}}
+	Using the URDF file format, we created a \texttt{scara.xacro} file which describes the SCARA robot that can be seen in the below figure. This robot is created using six links and five joints; see the tables below for the specific joints/links used and their functions. We additionally use a camera joint and link that is used to center the camera on our SCARA robot. The lengths of the links used in this SCARA robot are completely configurable but for this project arbitrary dimensions were used that allowed the user to observe the operation of the robot easily. Additionally the rotational limits of all of the joints (except for the fixed joints) are completely configurable as well (see the table below for current limits). We further added a \texttt{materials.xacro} URDF file to allow multiple colors to be implemented for all of the links so that it's easy to differentiate between them. 
 	
-	Reference this \href{https://answers.ros.org/question/348008/connecting-gazebo-and-rviz/}{connecting-gazebo-and-rviz}
-	\\
+	\begin{figure}[h]
+	\begin{minipage}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/rviz_robot.png}
+		\caption{SCARA robot in rviz}
+	\end{minipage}
+	\begin{minipage}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/gazebo_robot.png}
+		\caption{SCARA robot in gazebo}
+	\end{minipage}
+	\end{figure}
 	
+	The following joint and link definitions were used:
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Joint Name & Joint Type & Joint Limits \\\hline
+			Joint 1 & Continuous & $-180^\circ$ to $180^\circ$ \\
+			Joint 2 & Fixed & N/A \\
+			Joint 3 & Revolute & $-90^\circ$ to $90^\circ$ \\
+			Joint 4 & Fixed & N/A \\
+			Joint 5 & Prismatic & 0m to 1m \\\hline
+		\end{tabular}
+		\caption{\label{tab:widgets}Joints}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Link Name & Link Shape & Link Color & Link Purpose \\\hline
+			Link 1 & Cylinder & Orange & Connects to base frame \\
+			Link 2 & Cylinder & Red & Models $\theta_1$ Rotation \\
+			Link 3 & Box & Orange & Models $\theta_1$ Rotation with link 2\\
+			Link 4 & Cylinder & Blue & Models $\theta_2$ Rotation \\
+			Link 5 & Box & Red & Models $\theta_2$ Rotation with link 4\\
+			Link 6 & Box & Green & Translates along $d_3$ \\\hline
+		\end{tabular}
+		\caption{\label{tab:widgets}Links}
+	\end{table}
+
 	To begin the simulation:
 	\begin{itemize}
-		\item \texttt{roslaunch rrbot\_gazebo rrbot\_world.launch}
+		\item \texttt{roslaunch scara\_gazebo scara\_world.launch}
 	\end{itemize}	
 	
+	Once the simulation begins, a force/torque can be applied to the joints to induce rotation/translation, as seen below (link 3 would require a constant force to keep from dropping down):
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{figures/gazebo_robot_moved.png}
+		\caption{SCARA robot in gazebo after forces/torques applied}
+	\end{figure}
+
+	The robot description file and gazebo/rviz launch files can be found in the \texttt{scara\_description} and \texttt{scara\_gazebo} folders. 
+
 	\item \textbf{Forward Kinematics:}
 	Implement a FK node that
 	
@@ -173,11 +235,17 @@ def calc_homogeneous_transform(q): # calculate the homogeneous transform from th
 		
 		\begin{figure}[h]
 			\centering
-			%\includegraphics[width=0.6\textwidth]{figures/sub_pub_print_results.png}
+			\includegraphics[width=0.7\textwidth]{figures/sub_pub_print_results.png}
 		\end{figure}
 	
-		\item We can also see the \texttt{Pose} topic getting published by running \texttt{rostopic echo /scara\_robot/pose}
+		\item We can also see the \texttt{Pose} topic getting published by running \texttt{rostopic echo /scara/pose}
 		
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.18\textwidth]{figures/pose_echo.png}
+		\end{figure}
+		
+		Note: the above shows the robot in the home position (i.e on the $x-z$ plane)
 	\end{itemize}
 
 	\item \textbf{Inverse Kinematics:}
@@ -236,6 +304,10 @@ res.theta1 = alpha-atan2(E, C);
 res.theta2 = atan2(B, D);
 res.d3 = d1 - z;
 \end{lstlisting}
+
+To run the node:
+
+
 \end{enumerate}
 \end{document}
 

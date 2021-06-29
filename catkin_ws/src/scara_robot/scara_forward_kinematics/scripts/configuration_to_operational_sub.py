@@ -73,6 +73,7 @@ def callback(data):
 	msg.theta = eangles_EE[1]
 	msg.psi = eangles_EE[2]
 
+	pose_publisher = rospy.Publisher("/scara/pose", scara_robot_pose, queue_size = 1)
 	pose_publisher.publish(msg)
 	
 	if debug == True:
@@ -80,9 +81,7 @@ def callback(data):
 
 def listener(): # function that loops continuously waiting for incoming messages
     rospy.init_node('configuration_to_operational_sub') # initialize node
-    rospy.Subscriber('/scara_robot/joint_states', JointState, callback) # initialize subscriber under /scara_robot/joint_states topic name, JointState as the message, and the callback function
-
-    pose_publisher = rospy.Publisher("/scara_robot/pose", scara_robot_pose, queue_size = 1)
+    rospy.Subscriber('/scara/joint_states', JointState, callback) # initialize subscriber under /scara_robot/joint_states topic name, JointState as the message, and the callback function
 
     rospy.spin() # keep node running
 

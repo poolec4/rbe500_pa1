@@ -25,7 +25,4 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -model scara -param robot_description"/>
 
-  <!-- ros_control scara launch file -->
-  <!--include file="$(find gazebo_publish)/launch/gazebo_publish.launch" /-->
-
 </launch>
