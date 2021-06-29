@@ -9,9 +9,14 @@
     </plugin>
   </gazebo>
 
+  <!-- Link0 -->
+  <gazebo reference="link0">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
   <!-- Link1 -->
   <gazebo reference="link1">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Green</material>
   </gazebo>
 
   <!-- Link2 -->
@@ -25,7 +30,7 @@
   <gazebo reference="link3">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Green</material>
   </gazebo>
 
 </robot>
