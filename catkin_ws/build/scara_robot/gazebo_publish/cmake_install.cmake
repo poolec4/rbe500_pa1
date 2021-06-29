@@ -1,8 +1,8 @@
-# Install script for directory: /media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish
+# Install script for directory: /home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/chris/rbe500_team2_pa1/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/catkin_generated/installspace/gazebo_publish.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/catkin_generated/installspace/gazebo_publish.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish/cmake" TYPE FILE FILES
-    "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/catkin_generated/installspace/gazebo_publishConfig.cmake"
-    "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/catkin_generated/installspace/gazebo_publishConfig-version.cmake"
+    "/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/catkin_generated/installspace/gazebo_publishConfig.cmake"
+    "/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/gazebo_publish/catkin_generated/installspace/gazebo_publishConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish" TYPE FILE FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish" TYPE FILE FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish" TYPE DIRECTORY FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish" TYPE DIRECTORY FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish/config")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish" TYPE DIRECTORY FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_publish" TYPE DIRECTORY FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/gazebo_publish/launch")
 endif()
 

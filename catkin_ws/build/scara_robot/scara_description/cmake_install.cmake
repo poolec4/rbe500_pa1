@@ -1,8 +1,8 @@
-# Install script for directory: /media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description
+# Install script for directory: /home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/chris/rbe500_team2_pa1/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,29 +38,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_description/catkin_generated/installspace/scara_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_description/catkin_generated/installspace/scara_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description/cmake" TYPE FILE FILES
-    "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_description/catkin_generated/installspace/scara_descriptionConfig.cmake"
-    "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_description/catkin_generated/installspace/scara_descriptionConfig-version.cmake"
+    "/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_description/catkin_generated/installspace/scara_descriptionConfig.cmake"
+    "/home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_description/catkin_generated/installspace/scara_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE FILE FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE FILE FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE DIRECTORY FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE DIRECTORY FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE DIRECTORY FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/meshes")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE DIRECTORY FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/meshes")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE DIRECTORY FILES "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/urdf")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scara_description" TYPE DIRECTORY FILES "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_description/urdf")
 endif()
 

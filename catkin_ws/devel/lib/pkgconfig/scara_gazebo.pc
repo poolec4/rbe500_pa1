@@ -1,4 +1,4 @@
-prefix=/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel
+prefix=/home/chris/rbe500_team2_pa1/catkin_ws/devel
 
 Name: scara_gazebo
 Description: Description of scara_gazebo

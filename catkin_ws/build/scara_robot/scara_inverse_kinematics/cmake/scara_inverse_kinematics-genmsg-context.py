@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_inverse_kinematics/srv/poseJoints.srv"
+services_str = "/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_inverse_kinematics/srv/poseJoints.srv"
 pkg_name = "scara_inverse_kinematics"
 dependencies_str = ""
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

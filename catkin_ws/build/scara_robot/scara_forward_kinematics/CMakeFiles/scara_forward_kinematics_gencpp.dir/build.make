@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src"
+CMAKE_SOURCE_DIR = /home/chris/rbe500_team2_pa1/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build"
+CMAKE_BINARY_DIR = /home/chris/rbe500_team2_pa1/catkin_ws/build
 
 # Utility rule file for scara_forward_kinematics_gencpp.
 
@@ -63,10 +63,10 @@ scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/build
 
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/clean:
-	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics" && $(CMAKE_COMMAND) -P CMakeFiles/scara_forward_kinematics_gencpp.dir/cmake_clean.cmake
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics && $(CMAKE_COMMAND) -P CMakeFiles/scara_forward_kinematics_gencpp.dir/cmake_clean.cmake
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/clean
 
 scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/depend:
-	cd "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src" "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_forward_kinematics" "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build" "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics" "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/chris/rbe500_team2_pa1/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chris/rbe500_team2_pa1/catkin_ws/src /home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_forward_kinematics /home/chris/rbe500_team2_pa1/catkin_ws/build /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics /home/chris/rbe500_team2_pa1/catkin_ws/build/scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : scara_robot/scara_forward_kinematics/CMakeFiles/scara_forward_kinematics_gencpp.dir/depend
 

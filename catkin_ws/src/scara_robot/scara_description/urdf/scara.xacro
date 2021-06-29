@@ -1,20 +1,21 @@
 <?xml version="1.0"?>
 <!-- Revolute-Revolute Manipulator -->
-<robot name="scara" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
-  <xacro:property name="width" value="0.2" /> <!-- Square dimensions (widthxwidth) of beams -->
-  <xacro:property name="height1" value="1" /> <!-- Link 1 -->
+  <xacro:property name="mass" value="1" /> <!-- arbitrary value for mass -->
+  <xacro:property name="width" value="0.1" /> <!-- Square dimensions (widthxwidth) of beams -->
+  <xacro:property name="height1" value="2" /> <!-- Link 1 -->
   <xacro:property name="height2" value="1" /> <!-- Link 2 -->
   <xacro:property name="height3" value="1" /> <!-- Link 3 -->
   <xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
   <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find scara_description)/urdf/scara.gazebo" />
+  <xacro:include filename="$(find rrbot_description)/urdf/rrbot.gazebo" />
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find scara_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find rrbot_description)/urdf/materials.xacro" />
 
   <!-- Used for fixing robot to Gazebo 'base_link' -->
   <link name="world"/>
@@ -24,40 +25,251 @@
     <child link="link1"/>
   </joint>
 
-  <!-- LINK 1 -->
+  <!-- Base Link -->
   <link name="link1">
-      <collision>
-        <origin xyz="0 0 1" rpy="0 0 0"/>
-        <geometry>
-  	<box size="$0.25 0.25 1"/>
-        </geometry>
-      </collision>
+    <collision>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
+      <geometry>
+	<cylinder length="${height1}" radius="0.2"/>
+      </geometry>
+    </collision>
 
-      <visual>
-        <origin xyz="0 0 1" rpy="0 0 0"/>
-        <geometry>
-    <box size="$0.25 0.25 1"/>
-        </geometry>
-        <material name="orange"/>
-      </visual>
+    <visual>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
+      <geometry>
+	<cylinder length="${height1}" radius="0.2"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
 
-      <inertial>
-        <origin xyz="0 0 1" rpy="0 0 0"/>
-        <mass value="${mass}"/>
-        <inertia
-  	  ixx="${mass / 12.0 * (width*width + height1*height1)}" ixy="0.0" ixz="0.0"
-  	  iyy="${mass / 12.0 * (height1*height1 + width*width)}" iyz="0.0"
-  	  izz="${mass / 12.0 * (width*width + width*width)}"/>
-      </inertial>
+    <inertial>
+      <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+	  ixx="${mass / 12.0 * (width*width + height1*height1)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height1*height1 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+    </inertial>
   </link>
 
   <joint name="joint1" type="continuous">
     <parent link="link1"/>
     <child link="link2"/>
-    <origin xyz="0 ${width} ${height1 - axel_offset}" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
+    <origin xyz="0 0 ${height1 - axel_offset}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
     <dynamics damping="0.7"/>
   </joint>
+
+  <!-- Middle Link -->
+  <link name="link2">
+    <collision>
+      <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
+      <geometry>
+	<cylinder length="${height1}" radius="0.2"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
+      <geometry>
+	<cylinder length="${height1}" radius="0.2"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 ${height2}" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+	  ixx="${mass / 12.0 * (width*width + height2*height2)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height2*height2 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+    </inertial>
+  </link>
+
+  <joint name="joint2" type="fixed">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 0 1.5" rpy="1.57 0 0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+
+  <link name="link3">
+    <collision>
+      <origin xyz="0 0 1.25" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} 2.5"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 1.25" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} 2.5"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1.25" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+	  ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+    </inertial>
+  </link>
+
+  <joint name="joint3" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 1.5 2.5" rpy="1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="-1.57" upper="1.57" velocity="1"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+  <link name="link4">
+    <collision>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <geometry>
+	<cylinder length="1" radius="${width}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <geometry>
+	<cylinder length="1" radius="${width}"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+	  ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+    </inertial>
+  </link>
+
+  <joint name="joint4" type="fixed">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin xyz="0 2 1.5" rpy="1.57 0 0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+  <link name="link5">
+    <collision>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} 1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} 1"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+	  ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+    </inertial>
+  </link>
+
+  <joint name="joint5" type="prismatic">
+    <parent link="link5"/>
+    <child link="link6"/>
+    <origin xyz="0 2 1" rpy="1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="-1" upper="0" velocity="1"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+
+  <link name="link6">
+    <collision>
+      <origin xyz="0 0 2" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} 2"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 2" rpy="0 0 0"/>
+      <geometry>
+	<box size="${width} ${width} 2"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1.5" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+	  ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+    </inertial>
+  </link>
+
+
+
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${camera_link} 0 ${height3 - axel_offset*2}" rpy="0 0 0"/>
+    <parent link="link3"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames
+      so that ros and opencv can operate on the camera frame correctly -->
+  <joint name="camera_optical_joint" type="fixed">
+    <!-- these values have to be these values otherwise the gazebo camera image
+        won't be aligned properly with the frame it is supposedly originating from -->
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+  <link name="camera_link_optical">
+  </link>
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
@@ -80,10 +292,5 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
-
-  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-    <robotNamespace>/scara</robotNamespace>
-  </plugin>
-
 
 </robot>

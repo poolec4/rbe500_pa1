@@ -67,14 +67,14 @@ set(scara_forward_kinematics_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(scara_forward_kinematics_SOURCE_PREFIX /media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_forward_kinematics)
-  set(scara_forward_kinematics_DEVEL_PREFIX /media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel)
+  set(scara_forward_kinematics_SOURCE_PREFIX /home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_forward_kinematics)
+  set(scara_forward_kinematics_DEVEL_PREFIX /home/chris/rbe500_team2_pa1/catkin_ws/devel)
   set(scara_forward_kinematics_INSTALL_PREFIX "")
   set(scara_forward_kinematics_PREFIX ${scara_forward_kinematics_DEVEL_PREFIX})
 else()
   set(scara_forward_kinematics_SOURCE_PREFIX "")
   set(scara_forward_kinematics_DEVEL_PREFIX "")
-  set(scara_forward_kinematics_INSTALL_PREFIX /media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/install)
+  set(scara_forward_kinematics_INSTALL_PREFIX /home/chris/rbe500_team2_pa1/catkin_ws/install)
   set(scara_forward_kinematics_PREFIX ${scara_forward_kinematics_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(scara_forward_kinematics_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel/include " STREQUAL " ")
+if(NOT "/home/chris/rbe500_team2_pa1/catkin_ws/devel/include " STREQUAL " ")
   set(scara_forward_kinematics_INCLUDE_DIRS "")
-  set(_include_dirs "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel/include")
+  set(_include_dirs "/home/chris/rbe500_team2_pa1/catkin_ws/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel/include " STREQ
         message(FATAL_ERROR "Project 'scara_forward_kinematics' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'scara_forward_kinematics' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_forward_kinematics/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'scara_forward_kinematics' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/chris/rbe500_team2_pa1/catkin_ws/src/scara_robot/scara_forward_kinematics/${idir}'.  ${_report}")
     endif()
     _list_append_unique(scara_forward_kinematics_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel/lib;/media/chris/Local Disk/rbe500_team2_pa1/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/chris/rbe500_team2_pa1/catkin_ws/devel/lib;/home/chris/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
