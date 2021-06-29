@@ -12,9 +12,9 @@ int main(int argc, char **argv)
 	}
 
 	ros::NodeHandle n;
-	ros::ServiceClient client = n.serviceClient<inverse_kinematics::poseJoints>("inverse");
+	ros::ServiceClient client = n.serviceClient<scara_inverse_kinematics::poseJoints>("inverse");
 
-	inverse_kinematics::poseJoints srv;
+	scara_inverse_kinematics::poseJoints srv;
 	srv.request.r11 = atoll(argv[1]);
 	srv.request.r12 = atoll(argv[2]);
 	srv.request.r13 = atoll(argv[3]);

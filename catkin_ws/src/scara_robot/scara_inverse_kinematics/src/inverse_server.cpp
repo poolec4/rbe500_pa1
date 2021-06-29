@@ -25,7 +25,8 @@
  */
 
 
-bool findJoints(inverse_kinematics::poseJoints::Request &req, inverse_kinematics::poseJoints::Response &res)
+
+bool findJoints(scara_inverse_kinematics::poseJoints::Request &req, scara_inverse_kinematics::poseJoints::Response &res)
 {
 	//need to change, currently only taking in part of pose
 	//pose = orientation + position, only have position
@@ -53,8 +54,10 @@ bool findJoints(inverse_kinematics::poseJoints::Request &req, inverse_kinematics
 
 	double B = sqrt(1-D*D);
 	double E = sqrt(1-C*C);
-	
-	double alpha = atan2(y, x);
+
+	double F = x/sqrt(x*x+y*y);
+	double G = sqrt(1-F*F);	
+	double alpha = atan2(G, F);
 
 	res.theta1 = alpha-atan2(E, C);
 	res.theta2 = atan2(B, D);
