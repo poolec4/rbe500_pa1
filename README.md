@@ -29,17 +29,3 @@ ___
 
 **Robot Frame Definition**
 ![alt text](https://raw.githubusercontent.com/poolec4/rbe500_team2_pa1/main/Submission/figures/rrp_manipulator_reference_frames.png)
-
-**Package Overview**
-1. scara_robot is the main pacakge 
-
-a. configuration_to_operational_sub.py corresponds to part 2. It will subscribe to the joint values topic from Gazebo and calucalte the end effector pose. TODO:
-* Change subscriber to point to correct message from Gazebo
-* Add in transformation equations from DH params
-* Add publisher inside callback function
-
-**Insructions**
-
-1. `roscore`
-2. In a new window,  `rosrun scara_robot configuration_to_operational_sub.py`
-3. ...
